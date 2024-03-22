@@ -14,13 +14,7 @@ app.autodiscover_tasks()
 
 # @celeryd_after_setup.connect
 # def init_supergood(sender, instance, **kwargs):
-#     print("after setup")
-#     client = SGClient(
-#         client_id="8330ea8603b4963155d65cac1680969d",
-#         client_secret_id="3a0ac9d90cdf1589daae7a408a35e2e039a64f5b15febf1db71b47c7cba2c334",
-#         base_url="https://staging-api.supergood.ai",
-#         telemetry_url="https://staging-telemetry.supergood.ai",
-#     )
+#     client = SGClient()
 
 
 @app.task(bind=True, ignore_result=True)
