@@ -15,7 +15,7 @@ from pathlib import Path
 import sentry_sdk
 from supergood import Client as SGClient
 
-client = SGClient()
+SGClient.initialize()
 sentry_sdk.init(
     dsn="<your-sentry-dsn>"
     # Set traces_sample_rate to 1.0 to capture 100%
