@@ -15,7 +15,10 @@ from pathlib import Path
 import sentry_sdk
 from supergood import Client as SGClient
 
+# We recommend initializing Supergood as early in your call stack as reasonable
 SGClient.initialize()
+# Initializing some packages like Sentry before Supergood can cause Supergood's
+#  interceptors to malfunction
 sentry_sdk.init(
     dsn="<your-sentry-dsn>"
     # Set traces_sample_rate to 1.0 to capture 100%
